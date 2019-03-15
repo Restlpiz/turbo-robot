@@ -127,6 +127,44 @@ double max_side_diag(double arr[][m]/*, int m, int n*/)
 	return max;
 }
 
+double min_all(double arr[][m]/*, int m, int n*/)
+{
+	int i, j;
+	double min = arr[0][0];
+	
+	for(i = 0; i < n; i++)
+	{
+		for(j = 0; j < n; j++)
+		{
+			if(arr[i][j] < min)
+			{
+				min = arr[i][j];
+			}
+		}
+	}
+	
+	return min;
+}
+double max_all(double arr[][m]/*, int m, int n*/)
+{
+	int i, j;
+	double max = arr[0][0];
+	
+	for(i = 0; i < n; i++)
+	{
+		for(j = 0; j < n; j++)
+		{
+			if(arr[i][j] > max)
+			{
+				max = arr[i][j];
+			}
+		}
+	}
+	
+	return max;
+}
+
+
 //int main()
 //{
 //	int i, j;
@@ -152,7 +190,7 @@ double max_side_diag(double arr[][m]/*, int m, int n*/)
 //	}
 //	
 //	
-//	a = max_side_diag(arr);
+//	a = max_all(arr);
 //	printf("%lf",a);
 //	
 //	
