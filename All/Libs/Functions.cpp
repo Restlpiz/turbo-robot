@@ -1,23 +1,23 @@
 #include "Functions.h"
 
 // ввод количества столбцов и строк
-void read_M_N(int *p_M, int *p_N) 
+void read_M_N(int *M, int *N) 
 {
 	do
 	{
-		printf("M ="); scanf("%d", p_M);
-	} while ((*p_M > m) || (*p_M < 0));
+		printf("M ="); scanf("%d", M);
+	} while ((*M > m) || (*M < 0));
 	do
 	{
-		printf("N ="); scanf("%d", p_N);
-	} while ((*p_N > n) || (*p_N < 0));
+		printf("N ="); scanf("%d", N);
+	} while ((*N > n) || (*N < 0));
 } 
 // ввод элементов массива
 void read(int a[m][n], int M, int N) 
 {
-	for (int i = 1; i <= M; i++)
+	for (int i = 0; i < M; i++)
 	{
-		for (int j = 1; j <= N; j++)
+		for (int j = 0; j < N; j++)
 		{
 			printf("\n a[%d][%d] = ", i, j);
 			scanf("%d", &a[i][j]);
@@ -27,9 +27,9 @@ void read(int a[m][n], int M, int N)
 // вывод массива
 void end_a(int a[m][n], int M, int N) 
 {
-	for (int i = 1; i <= M; i++)
+	for (int i = 0; i < M; i++)
 	{
-		for (int j = 1; j <= N; j++)
+		for (int j = 0; j < N; j++)
 		{
 			printf("  %d  ", a[i][j]);
 		}
@@ -45,7 +45,7 @@ void line_replacement(int a[m][n], int M, int N) // изменение строки
 		do {
 			printf("Номер строки \n");
 			scanf("%d", &sign);
-		} while ((sign > M) && (sign < 0));
+		} while ((sign > M) || (sign < 0));
 
 		for (int j = 0; j < N; j++)
 		{
@@ -54,7 +54,7 @@ void line_replacement(int a[m][n], int M, int N) // изменение строки
 
 		printf("Назад - 0 \nЕще раз - 1");
 		scanf("%d", &sign);
-	} while ((sign < 0) && (sign > 1));
+	} while ((sign < 0) || (sign > 1));
 }
 void column_replacement(int a[m][n], int M, int N) // изменение столбца
 {
@@ -64,7 +64,7 @@ void column_replacement(int a[m][n], int M, int N) // изменение столбца
 		do {
 			printf("Номер столбца \n");
 			scanf("%d", &sign);
-		} while ((sign > N) && (sign < 0));
+		} while ((sign > N) || (sign < 0));
 
 		for (int i = 0; i < M; i++)
 		{
@@ -73,7 +73,7 @@ void column_replacement(int a[m][n], int M, int N) // изменение столбца
 
 		printf("Назад - 0 \nЕще раз - 1");
 		scanf("%d", &sign);
-	} while ((sign < 0) && (sign > 1));
+	} while ((sign < 0) || (sign > 1));
 }
 void element_replacement(int a[m][n], int M, int N) // изменение элемента
 {
@@ -82,17 +82,17 @@ void element_replacement(int a[m][n], int M, int N) // изменение элемента
 		do {
 			printf("Номер строки \n");
 			scanf("%d", &sign_M);
-		} while ((sign_M > M) && (sign_M < 0));
+		} while ((sign_M > M) || (sign_M < 0));
 		do {
 			printf("Номер столбца \n");
 			scanf("%d", &sign_N);
-		} while ((sign_N > N) && (sign_N < 0));
+		} while ((sign_N > N) || (sign_N < 0));
 
 		printf("\n a[%d][%d] = ", sign_M, sign_N); scanf("%d", &a[sign_M][sign_N]);
 
 		printf("Назад - 0 \nЕще раз - 1");
 		scanf("%d", &sign);
-	} while ((sign < 0) && (sign > 1));
+	} while ((sign < 0) || (sign > 1));
 }
 void change_line(int a[m][n], int M, int N) // поменять строки местами
 {
@@ -100,12 +100,12 @@ void change_line(int a[m][n], int M, int N) // поменять строки местами
 	do {
 		printf("Номер первой строки \n");
 		scanf("%d", &i_1);
-	} while ((i_1 > M) && (i_1 < 0));
+	} while ((i_1 > M) || (i_1 < 0));
 
 	do {
 		printf("Номер второй строки \n");
 		scanf("%d", &i_2);
-	} while ((i_2 > M) && (i_2 < 0));
+	} while ((i_2 > M) || (i_2 < 0));
 
 	for (int i = 1; i <= N; i++)
 	{
@@ -120,12 +120,12 @@ void change_column(int a[m][n], int M, int N) // поменять столбцы местами
 	do {
 		printf("Номер первого столбца \n");
 		scanf("%d", &j_1);
-	} while ((j_1 > M) && (j_1 < 0));
+	} while ((j_1 > M) || (j_1 < 0));
 
 	do {
 		printf("Номер второго столбца \n");
 		scanf("%d", &j_2);
-	} while ((j_2 > M) && (j_2 < 0));
+	} while ((j_2 > M) || (j_2 < 0));
 
 	for (int i = 1; i <= M; i++)
 	{

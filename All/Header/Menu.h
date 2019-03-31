@@ -12,6 +12,7 @@ void menu_min(int a[m][n], int M, int N);
 void menu_sort_min(int a[m][n], int M, int N);
 void menu_sort_max(int a[m][n], int M, int N);
 void menu_change(int a[m][n], int M, int N);
-int menu(int a[m][n], int M, int N);
+void menu_plus(int a[m][n], int M, int N);
+void menu_minus(int a[m][n], int M, int N);
 
 #endif
