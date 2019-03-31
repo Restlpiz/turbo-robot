@@ -22,10 +22,12 @@ int main(){
 	//delete_str(N,M1,&A[0][0],k);
 	//delete_stlb(N,M1,&A[0][0],k);
 	void (*fn)(int &a,int &b);
-	fn=swap_yb;
-	//fn=swap_vozr;
+	//fn=swap_yb;
+	fn=swap_vozr;
 	//sort_all(N,M,&A[0][0],fn);
-	sort_stlb(N,M,1,&A[0][0],fn);
+	//sort_stlb(N,M,1,&A[0][0],fn);
+	sort_pob_d(N,&A[0][0],fn);
+	std::cout<<'\n';
 	write(N,M,M1,&A[0][0]);
 	
 	return 0;
@@ -101,7 +103,7 @@ void sort_osn_d (int N,int *A,void (*fn)(int &a,int &b)){
 void sort_pob_d(int N,int *A,void (*fn)(int &a,int &b)){
 	for (int i=0;i<N-1;i++){
 		for (int j=i+1;j<N;j++){
-			(*fn)(A[(N-i)*N+i],A[(N-j)*N+j]);
+			(*fn)(A[i*N+N-i-1],A[j*N+N-j-1]);
 		}
 	}
 }
