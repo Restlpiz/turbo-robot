@@ -107,7 +107,7 @@ void change_line(int a[m][n], int M, int N) // поменять строки местами
 		scanf("%d", &i_2);
 	} while ((i_2 > M) || (i_2 < 0));
 
-	for (int i = 1; i <= N; i++)
+	for (int i = 0; i < N; i++)
 	{
 		help = a[i_1][i];
 		a[i_1][i] = a[i_2][i];
@@ -127,7 +127,7 @@ void change_column(int a[m][n], int M, int N) // поменять столбцы местами
 		scanf("%d", &j_2);
 	} while ((j_2 > M) || (j_2 < 0));
 
-	for (int i = 1; i <= M; i++)
+	for (int i = 0; i < M; i++)
 	{
 		help = a[i][j_1];
 		a[i][j_1] = a[i][j_2];
