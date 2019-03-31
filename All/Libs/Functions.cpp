@@ -144,7 +144,7 @@ void min_str(int a[m][n], int M, int N)
 	scanf("%d", &k);
 	int min = a[k][0];
 
-	for (i = 1; i < m; i++)
+	for (i = 1; i < M; i++)
 	{
 		if (a[k][i] < min)
 		{
@@ -160,7 +160,7 @@ void max_str(int a[m][n], int M, int N)
 	scanf("%d", &k);
 	int max = a[k][0];
 
-	for (i = 1; i < n; i++)
+	for (i = 1; i < N; i++)
 	{
 		if (a[k][i] > max)
 		{
@@ -176,7 +176,7 @@ void min_col(int a[m][n], int M, int N)
 	scanf("%d", &k);
 	int min = a[0][k];
 
-	for (i = 1; i < n; i++)
+	for (i = 1; i < N; i++)
 	{
 		if (a[i][k] < min)
 		{
@@ -192,7 +192,7 @@ void max_col(int a[m][n], int M, int N)
 	scanf("%d", &k);
 	int max = a[0][k];
 
-	for (i = 1; i < m; i++)
+	for (i = 1; i < M; i++)
 	{
 		if (a[i][k] > max)
 		{
@@ -205,7 +205,7 @@ void min_main_diag(int a[m][n], int M, int N)
 {
 	int i;
 	int min = a[0][0];
-	for (i = 0; i < m; i++)
+	for (i = 0; i < M; i++)
 	{
 		if (a[i][i] < min)
 		{
@@ -218,7 +218,7 @@ void max_main_diag(int a[m][n], int M, int N)
 {
 	int i;
 	int max = a[0][0];
-	for (i = 0; i < m; i++)
+	for (i = 0; i < M; i++)
 	{
 		if (a[i][i] > max)
 		{
@@ -230,8 +230,8 @@ void max_main_diag(int a[m][n], int M, int N)
 void min_side_diag(int a[m][n], int M, int N)
 {
 	int i, j;
-	int min = a[0][n - 1];
-	for (i = 0, j = n - 1; j >= 0; i++, j--)
+	int min = a[0][N - 1];
+	for (i = 0, j = N - 1; j >= 0; i++, j--)
 	{
 		if (a[i][j] < min)
 		{
@@ -243,8 +243,8 @@ void min_side_diag(int a[m][n], int M, int N)
 void max_side_diag(int a[m][n], int M, int N)
 {
 	int i, j;
-	int max = a[0][n - 1];
-	for (i = 0, j = n - 1; j >= 0; i++, j--)
+	int max = a[0][N - 1];
+	for (i = 0, j = N - 1; j >= 0; i++, j--)
 	{
 		if (a[i][j] > max)
 		{
@@ -258,9 +258,9 @@ void min_all(int a[m][n], int M, int N)
 	int i, j;
 	int min = a[0][0];
 
-	for (i = 0; i < n; i++)
+	for (i = 0; i < N; i++)
 	{
-		for (j = 0; j < n; j++)
+		for (j = 0; j < N; j++)
 		{
 			if (a[i][j] < min)
 			{
@@ -276,9 +276,9 @@ void max_all(int a[m][n], int M, int N)
 	int i, j;
 	int max = a[0][0];
 
-	for (i = 0; i < n; i++)
+	for (i = 0; i < N; i++)
 	{
-		for (j = 0; j < n; j++)
+		for (j = 0; j < N; j++)
 		{
 			if (a[i][j] > max)
 			{
@@ -297,12 +297,12 @@ void mins_str(int a[m][n], int M, int N)
 	printf("| Введите номер строки \n");
 	scanf("%d", &k);
 
-	for (i = 0; i < m; i++)
+	for (i = 0; i < M; i++)
 	{
 		if (a[k][i] < 0)
 			c++;
 	}
-	printf("Количество отрицательных элементов ", c);
+	printf("Количество отрицательных элементов %d \n", c);
 }
 void plus_str(int a[m][n], int M, int N)
 {
@@ -310,12 +310,12 @@ void plus_str(int a[m][n], int M, int N)
 	printf("| Введите номер строки \n");
 	scanf("%d", &k);
 
-	for (i = 0; i < n; i++)
+	for (i = 0; i < N; i++)
 	{
 		if (a[k][i] > 0)
 			c++;
 	}
-	printf("Количество положительных элементов ", c);
+	printf("Количество положительных элементов %d \n", c);
 }
 void mins_col(int a[m][n], int M, int N)
 {
@@ -323,12 +323,12 @@ void mins_col(int a[m][n], int M, int N)
 	printf("| Введите номер столбца \n");
 	scanf("%d", &k);
 
-	for (i = 0; i < n; i++)
+	for (i = 0; i < N; i++)
 	{
 		if (a[i][k] < 0)
 			c++;
 	}
-	printf("Количество отрицательных элементов ", c);
+	printf("Количество отрицательных элементов %d \n", c);
 }
 void plus_col(int a[m][n], int M, int N)
 {
@@ -336,80 +336,80 @@ void plus_col(int a[m][n], int M, int N)
 	printf("| Введите номер столбца \n");
 	scanf("%d", &k);
 
-	for (i = 0; i < m; i++)
+	for (i = 0; i < M; i++)
 	{
 		if (a[i][k] > 0)
 			c++;
 	}
-	printf("Количество положительных элементов ", c);
+	printf("Количество положительных элементов %d \n", c);
 }
 void mins_main_diag(int a[m][n], int M, int N)
 {
 	int i, c = 0;
-	for (i = 0; i < m; i++)
+	for (i = 0; i < M; i++)
 	{
 		if (a[i][i] < 0)
 			c++;
 	}
-	printf("Количество отрицательных элементов ", c);
+	printf("Количество отрицательных элементов %d \n", c);
 }
 void plus_main_diag(int a[m][n], int M, int N)
 {
 	int i, c = 0;
-	for (i = 0; i < m; i++)
+	for (i = 0; i < M; i++)
 	{
 		if (a[i][i] > 0)
 			c++;
 	}
-	printf("Количество положительных элементов ", c);
+	printf("Количество положительных элементов %d \n", c);
 }
 void mins_side_diag(int a[m][n], int M, int N)
 {
 	int i, j, c = 0;
-	for (i = 0, j = n - 1; j >= 0; i++, j--)
+	for (i = 0, j = N - 1; j >= 0; i++, j--)
 	{
 		if (a[i][j] < 0)
 			c++;
 	}
-	printf("Количество отрицательных элементов ", c);
+	printf("Количество отрицательных элементов %d \n", c);
 }
 void plus_side_diag(int a[m][n], int M, int N)
 {
 	int i, j, c = 0;
-	for (i = 0, j = n - 1; j >= 0; i++, j--)
+	for (i = 0, j = N - 1; j >= 0; i++, j--)
 	{
 		if (a[i][j] > 0)
 			c++;
 	}
-	printf("Количество положительных элементов ", c);
+	printf("Количество положительных элементов %d \n", c);
 }
 void mins_all(int a[m][n], int M, int N)
 {
 	int i, j, c = 0;
 
-	for (i = 0; i < n; i++)
+	for (i = 0; i < N; i++)
 	{
-		for (j = 0; j < n; j++)
+		for (j = 0; j < N; j++)
 		{
 			if (a[i][j] < 0)
 				c++;
 		}
 	}
 
-	printf("Количество отрицательных элементов ", c);
+	printf("Количество отрицательных элементов %d \n", c);
 }
 void plus_all(int a[m][n], int M, int N)
 {
 	int i, j, c = 0;;
 
-	for (i = 0; i < n; i++)
+	for (i = 0; i < N; i++)
 	{
-		for (j = 0; j < n; j++)
+		for (j = 0; j < N; j++)
 		{
 			if (a[i][j] > 0)
 				c++;
 		}
 	}
 
-	printf("Количество положительных элементов ", c);
+	printf("Количество положительных элементов %d \n", c);
 }
