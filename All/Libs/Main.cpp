@@ -1,5 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include "Functions.h"
+#include "../Header/Functions.h"
 
 int main()
 {

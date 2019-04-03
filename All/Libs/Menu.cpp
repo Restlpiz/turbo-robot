@@ -1,5 +1,5 @@
-#include "Menu.h"
-#include "Functions.h"
+#include "../Header/Menu.h"
+#include "../Header/Functions.h"
 
 void menu_max(int a[m][n], int M, int N)
 {

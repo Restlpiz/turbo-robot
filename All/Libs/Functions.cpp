@@ -1,4 +1,4 @@
-#include "Functions.h"
+#include "../Header/Functions.h"
 
 // ввод количества столбцов и строк
 void read_M_N(int *M, int *N) 
