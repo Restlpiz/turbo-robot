@@ -174,32 +174,42 @@ void menu_sort_min(int a[m][n], int M, int N)
 	int sign;
 	printf(" ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––\n"
 		"|                                                            |\n"
-		"|              >> Сортировка массива по убыванию<<           |\n"
+		"|            >> Сортировка массива по возрастанию<<          |\n"
 		"|                                                            |\n"
 		"|  >> Выберете действие:                                     |\n"
 		"|                                                            |\n"
 		"|       1) В строке                                          |\n"
 		"|       2) В столбце                                         |\n"
-		"|       3) В диагонали                                       |\n"
-		"|       4) В массиве                                         |\n"
+		"|       3) В побочной диагонали                              |\n"
+		"|       4) В главной диагонали                               |\n"
+		"|       5) В массиве                                         |\n"
 		"|                                                            |\n"
 		"|       >> Введите 0, чтобы вернуться назад <<               |\n"
 		"|                                                            |\n");
 	do {
 		printf("| Answer: ");
 		scanf("%d", &sign);
-	} while ((sign < 0) || (sign > 4));
+	} while ((sign < 0) || (sign > 5));
+	void(*fn)(int &a, int &b);
+	fn = swap_yb;
 	switch (sign)
 	{
-	case 0: {}
+	case 0: {return; }
 			break;
-	case 1: {}
+	case 1: {
+		sort_str(M, N, a, fn);
+	}
 			break;
-	case 2: {}
+	case 2: {sort_stlb(M, N, a, fn); }
 			break;
-	case 3: {}
+	case 3: {
+		if (N == M) sort_pob_d(N, a, fn); }
 			break;
-	case 4: {}
+	case 4: {if (N == M) sort_osn_d(N, a, fn); }
+			break;
+	case 5: {
+		sort_all(M, N, a, fn);
+	}
 			break;
 	}
 }
@@ -214,26 +224,36 @@ void menu_sort_max(int a[m][n], int M, int N)
 		"|                                                            |\n"
 		"|       1) В строке                                          |\n"
 		"|       2) В столбце                                         |\n"
-		"|       3) В диагонали                                       |\n"
-		"|       4) В массиве                                         |\n"
+		"|       3) В побочной диагонали                              |\n"
+		"|       4) В главной диагонали                               |\n"
+		"|       5) В массиве                                         |\n"
 		"|                                                            |\n"
 		"|       >> Введите 0, чтобы вернуться назад <<               |\n"
 		"|                                                            |\n");
 	do {
 		printf("| Answer: ");
 		scanf("%d", &sign);
-	} while ((sign < 0) || (sign > 4));
+	} while ((sign < 0) || (sign > 5));
+	void(*fn)(int &a, int &b);
+	fn = swap_vozr;
 	switch (sign)
 	{
-	case 0: {}
+	case 0: {return;}
 			break;
-	case 1: {}
+	case 1: {
+		sort_str(M, N, a, fn);
+	}
 			break;
-	case 2: {}
+	case 2: {sort_stlb(M, N, a, fn); }
 			break;
-	case 3: {}
+	case 3: {
+		if (N==M) sort_pob_d(N, a, fn); }
 			break;
-	case 4: {}
+	case 4: {if (N == M) sort_osn_d(N, a, fn); }
+			break;
+	case 5: {
+		sort_all(M, N, a, fn);
+	}
 			break;
 	}
 }
@@ -274,9 +294,14 @@ void menu_change(int a[m][n], int M, int N)
 	case 3: {
 		element_replacement(a, M, N);
 	} break;
-	case 4: {}
+	case 4: {
+		delete_str(M,N,a);
+		//write(M,N,N,&a[0][0]);
+	}
 			break;
-	case 5: {}
+	case 5: {
+		delete_str(M, N, a);
+	}
 			break;
 	case 6: {
 		change_line(a, M, N); 
